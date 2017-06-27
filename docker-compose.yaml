@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  intellij:
+    build: .
+    image: marcinlagowski/intellij:ideaC-2017.1.4
+    environment:
+      - DISPLAY=:1
+    volumes:
+      - intellij-data:/home/developer/.IdeaIC2017.1
+      - java-projects:/home/developer/IdeaProjects
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+volumes:
+  intellij-data:
+  java-projects:
